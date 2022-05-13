@@ -22,7 +22,7 @@ int main()
 	a.Square(n, x);
 	cout << endl << "second: " << endl;
 	a.Square(n, y);
-	cout << "step = " << a.Step(n) << endl;
+	cout << "step of PI = " << a.Step(n) << endl;
 
 	cin.get();
 	cin.get();
