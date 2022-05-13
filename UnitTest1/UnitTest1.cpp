@@ -12,10 +12,10 @@ namespace UnitTest1
 		
 		TEST_METHOD(TestMethod1)
 		{
-			
 			Number a;
+			double n = 4;
 			a.setNumber(4);
-			Assert::AreEqual(4.0, a.getNumber());
+			Assert::AreEqual(n, a.getNumber());
 		}
 	};
 }
