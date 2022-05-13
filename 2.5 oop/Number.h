@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -26,7 +27,7 @@ public:
 	operator string() const;
 
 	friend Number operator -(const Number&, const Number&);
-	friend Number operator *(const Number&, const Number&);
+	friend Number operator *(const Number&,	const Number&);
 
 	friend ostream& operator <<(ostream&, const Number&);
 	friend istream& operator >>(istream&, Number&);
@@ -35,6 +36,6 @@ public:
 	Number operator ++(int);
 	Number& operator --();
 	Number operator --(int);
-	
+		
 };
 

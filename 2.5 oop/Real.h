@@ -4,32 +4,24 @@ using namespace std;
 class Real
 {
 private:
-	double step;
 	Number num;
 public:
 	Real();
-	Real(double, Number);
+	Real(Number);
 	Real(const Real&);
 	~Real();
 
-	double getStep()  const { return step; }
-	Number getNum()	const { return num; }
-
-	void setStep(double step) { this->step = step; }
+	Number getNum() { return num; }
+	
 	void setNum(Number num) { this->num = num; }
 
 	Real& operator=(const Real&);
-	operator string() const;
+	operator string();
 
-	friend ostream& operator<<(ostream&, const Real&);
+	friend ostream& operator<<(ostream&, Real&);
 	friend istream& operator>>(istream&, Real&);
-
-	Real& operator ++();
-	Real& operator --();
-	Real operator ++(int);
-	Real operator --(int);
 	
-	double Square(int step);
+	double Square(int step, Number& f);
 	double Step(int step);
 };
 

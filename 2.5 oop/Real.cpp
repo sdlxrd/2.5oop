@@ -11,76 +11,49 @@ using namespace std;
 
 Real::Real()
 {
-	step = 0;
 	num;
 }
-Real::Real(double step, Number num)
+Real::Real(Number num)
 {
-	this->step = step;
 	this->num = num;
 }
 Real::Real(const Real& x)
 {
-	this-> step = x.step;
 	this-> num = x.num;
 }
 Real::~Real()
 {}	
 Real& Real::operator=(const Real& x)
 {
-	step = x.step;
 	num = x.num;
 	return *this;
 }
-Real::operator string()const
+Real::operator string()
 {
 	stringstream s;
-	s << "square of = " << step << " degree of  " << num.getNumber() << " = " << Square(step) << endl;
-	s << step << "step of Pi = " << Step(step) << endl;
-	s << num.getNumber() << " - " << num.getNumber2() << " = " << num.getNumber() - num.getNumber2() << endl;
-	s << num.getNumber() << " * " << num.getNumber2() << " = " << num.getNumber() * num.getNumber2() << endl;
+	s << "";
 	return s.str();
 }
-ostream& operator<<(ostream& out, const Real& x)
+ostream& operator<<(ostream& out, Real& x)
 {
 	out << string(x);
-
 	return out;
 }
 istream& operator>>(istream& in, Real& x)
 {
-	cout << "Enter step: ";in >> x.step;
-	cout << "Enter number: ";in >> x.num;
+	int step;
+	cout << "Enter step: ";in >> step;
+	cout << "Numbers: ";in >> x.num;
 	cout << endl;
 	return in;
 }
-
-Real& Real::operator ++()
-{
-	step++;
-	return *this;
-}
-Real Real::operator ++(int)
-{
-	Real x = *this;
-	step++;
-	return x;
-}
-Real& Real::operator --()
-{
-	step--;
-	return *this;
-}
-Real Real::operator --(int)
-{
-	Real x = *this;
-	step--;
-	return x;
-}
 	
-double Real::Square(int step)
+double Real::Square(int step, Number& f)
 {
-	return pow(num.getNumber(), (1. / step));
+	cout << "root of x = " << pow(f.getNumber(), (1. / step)) << endl;
+	cout << "root of y = " << pow(f.getNumber2(), (1. / step)) << endl;
+
+	return 0;
 }
 double Real::Step(int step)
 {

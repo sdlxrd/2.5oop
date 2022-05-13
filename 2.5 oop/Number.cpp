@@ -48,7 +48,6 @@ ostream& operator << (ostream& out, const Number& x)
 }
 istream& operator >> (istream& in, Number& x)
 {
-	cout << endl;
 	cout << "Enter first number: ";cin >> x.number1;
 	cout << "Enter second number: ";cin >> x.number2;
 	return in;
